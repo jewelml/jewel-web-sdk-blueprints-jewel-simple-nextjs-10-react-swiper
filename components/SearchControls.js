@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 
 export default function SearchControls() {
   const router = useRouter()
-  const [itemId, setItemId] = useState('')
+  const [itemId, setItemId] = useState('1177646331_multicolor')
   const [selectedModels, setSelectedModels] = useState(['B_prod'])
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
   const dropdownRef = useRef(null)
@@ -12,6 +12,8 @@ export default function SearchControls() {
     // Initialize from URL params
     if (router.query.item_id) {
       setItemId(router.query.item_id)
+    } else {
+      setItemId('1177646331_multicolor')
     }
     if (router.query.model) {
       const models = router.query.model.split(',').map(m => m.trim())
